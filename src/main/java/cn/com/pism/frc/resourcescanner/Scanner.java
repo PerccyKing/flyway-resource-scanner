@@ -16,7 +16,6 @@
 package cn.com.pism.frc.resourcescanner;
 
 import cn.com.pism.frc.resourcescanner.utils.StringUtils;
-import com.alibaba.fastjson.JSON;
 import lombok.extern.slf4j.Slf4j;
 
 import java.nio.charset.Charset;
@@ -120,21 +119,4 @@ public class Scanner<I> implements ResourceProvider, ClassProvider<I> {
         return Collections.unmodifiableCollection(classes);
     }
 
-
-    public static void main(String[] args) {
-        Scanner<JavaMigration> scanner = new Scanner<>(
-                JavaMigration.class,
-                Arrays.asList(new Location("classpath:sqls")),
-                Thread.currentThread().getContextClassLoader(),
-                StandardCharsets.UTF_8
-
-
-                , new ResourceNameCache()
-                , new LocationScannerCache()
-        );
-        for (LoadableResource resource : scanner.resources) {
-            System.out.println(JSON.toJSONString(resource));
-        }
-
-    }
 }

@@ -109,7 +109,8 @@ public class ClassUtils {
         try {
             classLoader.loadClass(className);
             return true;
-        } catch (Throwable ex) {
+        } catch (Exception ex) {
+            log.error(ex.getMessage());
             // Class or one of its dependencies is not present...
             return false;
         }
@@ -209,7 +210,7 @@ public class ClassUtils {
      */
     public static String getStaticFieldValue(String className, String fieldName, ClassLoader classLoader) {
         try {
-            Class clazz = Class.forName(className, true, classLoader);
+            Class<?> clazz = Class.forName(className, true, classLoader);
             Field field = clazz.getField(fieldName);
             return (String) field.get(null);
         } catch (Exception e) {

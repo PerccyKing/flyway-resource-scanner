@@ -6,7 +6,7 @@
 
     <groupId>cn.com.pism.frc</groupId>
     <artifactId>flyway-resource-scanner</artifactId>
-    <version>1.0.1</version>
+    <version>1.0.2</version>
 
     <licenses>
         <license>
@@ -44,19 +44,14 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <version>1.18.22</version>
+            <version>1.18.24</version>
         </dependency>
 
-        <dependency>
-            <groupId>software.amazon.awssdk</groupId>
-            <artifactId>s3</artifactId>
-            <version>2.17.112</version>
-        </dependency>
 
         <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-api</artifactId>
-            <version>1.7.33</version>
+            <version>1.7.36</version>
         </dependency>
 
         <dependency>
@@ -68,7 +63,7 @@
         <dependency>
             <groupId>org.apache.logging.log4j</groupId>
             <artifactId>log4j-api</artifactId>
-            <version>2.17.1</version>
+            <version>2.17.2</version>
         </dependency>
 
         <dependency>
@@ -78,15 +73,9 @@
         </dependency>
 
         <dependency>
-            <groupId>com.alibaba</groupId>
-            <artifactId>fastjson</artifactId>
-            <version>1.2.79</version>
-        </dependency>
-
-        <dependency>
             <groupId>org.slf4j</groupId>
             <artifactId>slf4j-simple</artifactId>
-            <version>1.7.33</version>
+            <version>1.7.36</version>
         </dependency>
     </dependencies>
 
