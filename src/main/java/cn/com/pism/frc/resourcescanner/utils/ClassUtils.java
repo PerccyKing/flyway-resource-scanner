@@ -17,7 +17,8 @@ package cn.com.pism.frc.resourcescanner.utils;
 
 
 import cn.com.pism.frc.resourcescanner.exception.ScannerException;
-import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 import java.io.File;
 import java.lang.reflect.Field;
@@ -32,8 +33,10 @@ import java.util.List;
 /**
  * Utility methods for dealing with classes.
  */
-@Slf4j
 public class ClassUtils {
+
+    private static final Log log = LogFactory.getLog(ClassUtils.class);
+
 
     /**
      * Prevents instantiation.

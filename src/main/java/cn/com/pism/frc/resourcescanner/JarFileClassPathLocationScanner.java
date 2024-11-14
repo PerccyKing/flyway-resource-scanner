@@ -15,7 +15,8 @@
  */
 package cn.com.pism.frc.resourcescanner;
 
-import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 import java.io.IOException;
 import java.net.JarURLConnection;
@@ -29,8 +30,9 @@ import java.util.jar.JarFile;
 /**
  * ClassPathLocationScanner for jar files.
  */
-@Slf4j
 public class JarFileClassPathLocationScanner implements ClassPathLocationScanner {
+
+    private static final Log log = LogFactory.getLog(JarFileClassPathLocationScanner.class);
 
     /**
      * The separator that delimits the jar file name and the file inside the jar within a URL.

@@ -17,7 +17,8 @@ package cn.com.pism.frc.resourcescanner;
 
 
 import cn.com.pism.frc.resourcescanner.exception.ScannerException;
-import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 import java.io.File;
 import java.util.regex.Matcher;
@@ -26,8 +27,9 @@ import java.util.regex.Pattern;
 /**
  * A location to load migrations from.
  */
-@Slf4j
 public final class Location implements Comparable<Location> {
+
+    private static final Log log = LogFactory.getLog(Location.class);
 
     /**
      * The prefix for classpath locations.
@@ -199,6 +201,7 @@ public final class Location implements Comparable<Location> {
     /**
      * Returns the path relative to this location. If the location path contains wildcards, the returned path will be relative
      * to the last non-wildcard folder in the path.
+     *
      * @return the path relative to this location
      */
     public String getPathRelativeToThis(String path) {

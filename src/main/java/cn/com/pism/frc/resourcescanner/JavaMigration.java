@@ -69,13 +69,4 @@ public interface JavaMigration {
      */
     boolean canExecuteInTransaction();
 
-    /**
-     * Executes this migration. The execution will automatically take place within a transaction, when the underlying
-     * database supports it and the canExecuteInTransaction returns {@code true}.
-     *
-     * @param context The context relevant for this migration, containing things like the JDBC connection to use and the
-     *                current Flyway configuration.
-     * @throws Exception when the migration failed.
-     */
-    void migrate(Context context) throws Exception;
 }

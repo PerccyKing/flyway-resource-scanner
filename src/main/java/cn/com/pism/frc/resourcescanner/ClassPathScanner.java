@@ -18,7 +18,8 @@ package cn.com.pism.frc.resourcescanner;
 
 import cn.com.pism.frc.resourcescanner.utils.ClassUtils;
 import cn.com.pism.frc.resourcescanner.utils.UrlUtils;
-import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 import java.io.IOException;
 import java.net.URISyntaxException;
@@ -33,8 +34,9 @@ import java.util.regex.Pattern;
 /**
  * ClassPath scanner.
  */
-@Slf4j
 public class ClassPathScanner<I> implements ResourceAndClassScanner<I> {
+
+    private static final Log log = LogFactory.getLog(ClassPathScanner.class);
 
     private final Class<I> implementedInterface;
     /**

@@ -16,18 +16,19 @@
 package cn.com.pism.frc.resourcescanner;
 
 import cn.com.pism.frc.resourcescanner.utils.StringUtils;
-import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
 
 import java.nio.charset.Charset;
-import java.nio.charset.StandardCharsets;
 import java.nio.file.Paths;
 import java.util.*;
 
 /**
  * Scanner for Resources and Classes.
  */
-@Slf4j
 public class Scanner<I> implements ResourceProvider, ClassProvider<I> {
+
+    private static final Log log = LogFactory.getLog(Scanner.class);
 
     private final List<LoadableResource> resources = new ArrayList<>();
     private final List<Class<? extends I>> classes = new ArrayList<>();
